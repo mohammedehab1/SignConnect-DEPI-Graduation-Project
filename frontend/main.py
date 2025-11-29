@@ -6,9 +6,6 @@ from PIL import Image
 from mediapipe_utils import MediaPipeProcessor
 import time
 import io
-import soundfile as sf
-import numpy as np
-import requests
 
 st.title('SignConnect')
 
