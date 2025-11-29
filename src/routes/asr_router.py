@@ -2,7 +2,10 @@ from fastapi import APIRouter, File, UploadFile
 from controller import ASRController
 from models import ASROutput
 
-asr_router = APIRouter()
+asr_router = APIRouter( 
+                   prefix="/asr", 
+                   tags=["ASR"]
+                   )
 asr_controller = ASRController()
 
 @asr_router.post("/transcribe", response_model=ASROutput)
