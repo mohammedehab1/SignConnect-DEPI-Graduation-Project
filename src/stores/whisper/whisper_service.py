@@ -46,6 +46,11 @@ class WhisperService:
 
         inputs = inputs.to(self.device)
 
+        if self.model.dtype == torch.float16:
+            inputs = inputs.half()
+        else:
+            inputs = inputs.float()
+
         with torch.no_grad():
             predicted_ids = self.model.generate(inputs)
 
