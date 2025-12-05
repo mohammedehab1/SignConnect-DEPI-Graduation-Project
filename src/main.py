@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routes import asr_router, stt_router,tts_router
+from routes import asr_router, stt_router,tts_router,api
 from helpers.config import settings
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -15,3 +15,4 @@ app.add_middleware(
 app.include_router(asr_router)
 app.include_router(stt_router)
 app.include_router(tts_router, prefix="/tts", tags=["TTS"])
+app.include_router(api)
